@@ -1,0 +1,1 @@
+Laboratorio N 3 de Sistemas operativos II, en el cual se descifra una palabra clave oculta en una imagen BMP y luego se procede a encriptar la misma utilizando el algoritmos de encriptacion RSA y su correspondiente Desencriptacion
