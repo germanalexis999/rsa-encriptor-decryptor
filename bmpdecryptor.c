@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 #define HEADER_SIZE 54
 
 void decript(const char * cadena) {

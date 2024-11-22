@@ -76,8 +76,8 @@ Result encryptor(int message) {
 
   mpz_powm(c, message_mpz, e, n);
 
-  long integerC = mpz_get_si(c);
-  r.c = integerC;
+  long floatC = mpz_get_si(c);
+  r.c = floatC;
   mpz_init_set(r.e, e);
   mpz_init_set(r.d, d);
   mpz_init_set(r.n, n);
