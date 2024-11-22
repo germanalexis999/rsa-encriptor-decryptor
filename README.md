@@ -1,33 +1,36 @@
-# Laboratorio N° 3 - Sistemas Operativos II: Cifrado y Descifrado de Palabra Clave en Imagen BMP utilizando RSA
-
+Laboratorio N° 3 - Sistemas Operativos II: Cifrado y Descifrado de Palabra Clave en Imagen BMP utilizando RSA
 Este laboratorio tiene como objetivo implementar un sistema de cifrado y descifrado utilizando el algoritmo RSA, aplicado a una palabra clave oculta dentro de una imagen BMP. El proceso incluye la extracción de la clave oculta, su encriptación usando RSA y finalmente su desencriptación para validar el funcionamiento del algoritmo.
 
-## Descripción del Proyecto
-
+Descripción del Proyecto
 Este proyecto realiza los siguientes pasos:
 
-1. **Extracción de palabra clave oculta**:  
-   Se extrae una palabra clave oculta en una imagen BMP. Esta palabra clave fue previamente cifrada.
+Extracción de palabra clave oculta: Se extrae una palabra clave oculta en una imagen BMP. Esta palabra clave fue previamente cifrada.
+Cifrado RSA: La palabra clave extraída se encripta utilizando el algoritmo RSA.
+Desencriptado RSA: La palabra clave cifrada se desencripta utilizando las claves privadas y públicas generadas con RSA para verificar que el proceso de encriptación y desencriptación se realiza correctamente.
+El proyecto hace uso de la librería GMP (GNU Multiple Precision Arithmetic) para manejar números grandes, lo que es esencial para las operaciones matemáticas en el algoritmo RSA.
 
-2. **Cifrado RSA**:  
-   La palabra clave extraída se encripta utilizando el algoritmo RSA.
-
-3. **Desencriptado RSA**:  
-   La palabra clave cifrada se desencripta utilizando las claves privadas y públicas generadas con RSA para verificar que el proceso de encriptación y desencriptación se realiza correctamente.
-
-El proyecto hace uso de la librería **GMP** (GNU Multiple Precision Arithmetic) para manejar números grandes, lo que es esencial para las operaciones matemáticas en el algoritmo RSA.
-
----
-
-## Requisitos
-
-### 1. **Instalar la librería GMP**:
-
+Requisitos
+1. Instalar la librería GMP:
 La librería GMP es esencial para el manejo de enteros grandes necesarios en RSA. Si no la tienes instalada, puedes hacerlo en sistemas basados en Debian/Ubuntu con el siguiente comando:
 
-```bash
+bash
+Copiar código
 sudo apt-get install libgmp-dev
+2. Instalar GCC:
+Asegúrate de tener el compilador GCC instalado en tu sistema para poder compilar el código fuente en C.
 
+Instrucciones de Compilación y Ejecución
+Paso 1: Compilar los archivos fuente
+El proyecto consta de dos archivos principales:
+
+bmpdecryptor.c: Este archivo contiene la lógica para extraer la palabra clave cifrada desde una imagen BMP.
+encryptor-decryptor.c: Este archivo realiza el cifrado y desencriptado de la palabra clave utilizando RSA.
+Para compilar ambos archivos, debes usar el siguiente comando:
+
+bash
+Copiar código
+gcc -o encryptor-decryptor encryptor-decryptor.c -lgmp
+Este comando generará un archivo ejecutable llamado encryptor-decryptor, que podrás utilizar para ejecutar el programa.
 
 PD: bmpdecryptor.c no requiere la libreria -lgmp
 
