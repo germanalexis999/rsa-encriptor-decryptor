@@ -19,20 +19,34 @@ sudo apt-get install libgmp-dev
 2. Instalar GCC:
 Asegúrate de tener el compilador GCC instalado en tu sistema para poder compilar el código fuente en C.
 
+
 Instrucciones de Compilación y Ejecución
 Paso 1: Compilar los archivos fuente
 El proyecto consta de dos archivos principales:
 
 bmpdecryptor.c: Este archivo contiene la lógica para extraer la palabra clave cifrada desde una imagen BMP.
+
+gcc -o bmpdecryptor bmpdecryptor.c
+
+./bmpdecryptor
+
 encryptor-decryptor.c: Este archivo realiza el cifrado y desencriptado de la palabra clave utilizando RSA.
+
 Para compilar ambos archivos, debes usar el siguiente comando:
 
-bash
-Copiar código
+
 gcc -o encryptor-decryptor encryptor-decryptor.c -lgmp
+
+compilacion Mac OS (ARM CPU)
+
+gcc -o encryptor-decryptor encryptor-decryptor.c -I/opt/homebrew/include -L/opt/homebrew/lib -lgmp
+
+./encryptor-decryptor
+
 Este comando generará un archivo ejecutable llamado encryptor-decryptor, que podrás utilizar para ejecutar el programa.
 
 PD: bmpdecryptor.c no requiere la libreria -lgmp
+
 
 Paso 2: Ejecutar el programa
 Para ejecutar el programa, debes proporcionar el nombre de una imagen BMP que contenga un mensaje cifrado.  Asegúrate de estar en el directorio raíz del proyecto.
